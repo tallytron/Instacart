@@ -26,6 +26,7 @@ Following the data exploration, the following sections describe some important r
 1)	Customer Traffic
 
 ![image](https://user-images.githubusercontent.com/80222038/154808657-10e7187e-9539-49d4-926f-2532f4fb1165.png)
+
 As indicated by the time chart on the figure, most of the orders are placed between the hours of 10 AM and 4PM.
 
 ![image](https://user-images.githubusercontent.com/80222038/154808663-d1a7296b-afe5-48b2-8f4a-7ac8ba4fb64b.png)
