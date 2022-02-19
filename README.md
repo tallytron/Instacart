@@ -51,28 +51,22 @@ Its interesting to see that the bestseller product is Bananas, and second bestse
 Another interesting point to note is that the graph shows that people seem to reorder on day 7 and then again day 30 which indicates that as people want to stock groceries during these specific days.
 
 ![image](https://user-images.githubusercontent.com/80222038/154810428-49caa3a3-9da2-4270-a716-6a67b05c6d36.png)
-
 The graph indicates that the items by first time users on Instacart was White-Multifold Towels and second being sparkling water.
 
 ![image](https://user-images.githubusercontent.com/80222038/154811890-75a2260b-af23-4fda-9976-88714333ac7a.png)
-
 Top Products that people love to buy in the morning
 
 ![image](https://user-images.githubusercontent.com/80222038/154811894-39f3c5cb-1ab7-458b-9ef9-5eddc281db80.png)
-
 Top 15 Aisles
 
 ![image](https://user-images.githubusercontent.com/80222038/154811907-8bc8adbc-02de-41b4-9ccf-078ab2d100f1.png)
-
 Reordered items percentage 
 
 ![image](https://user-images.githubusercontent.com/80222038/154811913-118ca188-fd17-41f2-972f-e0c9cf81b132.png)
-
 Organic VS Non-Organic
 
 
 ![image](https://user-images.githubusercontent.com/80222038/154811966-3cef0ad0-c0b1-49bc-bf46-a62483fdde42.png)
-
 Treemap of top departments and aisles
 
 
