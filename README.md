@@ -23,6 +23,7 @@ I examined the purchasing behaviour in this area by examining many key factors. 
 ![image](https://user-images.githubusercontent.com/80222038/154808644-5a38f218-caa4-4adc-bccf-6943f3a26a9f.png)
 
 Following the data exploration, the following sections describe some important results.
+
 1)	Customer Traffic
 
 ![image](https://user-images.githubusercontent.com/80222038/154808657-10e7187e-9539-49d4-926f-2532f4fb1165.png)
@@ -30,6 +31,63 @@ Following the data exploration, the following sections describe some important r
 As indicated by the time chart on the figure, most of the orders are placed between the hours of 10 AM and 4PM.
 
 ![image](https://user-images.githubusercontent.com/80222038/154808663-d1a7296b-afe5-48b2-8f4a-7ac8ba4fb64b.png)
+
+The graph indicates in the dark orange shaded bars that most order are on day 0 and 1, with 0 and 1 being Saturday and Sunday. On these days the total number of orders are closed to 200,000.
+
+2) Product Popularity
+
+![image](https://user-images.githubusercontent.com/80222038/154810358-b8df3716-3da5-4fc5-bfa4-6d2e815cfa22.png)
+
+Its interesting to see that the bestseller product is Bananas, and second bestseller product is organic bananas which is indicated in the graph.
+
+![image](https://user-images.githubusercontent.com/80222038/154810368-0183b6ec-8539-45d7-94d5-a9fb9e9de067.png)
+
+2% Lactose Free Milk is the most re-ordered product with a probability of 93% as indicated by the graph.
+
+3) Order Frequency
+
+![image](https://user-images.githubusercontent.com/80222038/154810404-56595287-bef8-49db-898a-5ddc997ad715.png)
+
+Another interesting point to note is that the graph shows that people seem to reorder on day 7 and then again day 30 which indicates that as people want to stock groceries during these specific days.
+
+![image](https://user-images.githubusercontent.com/80222038/154810428-49caa3a3-9da2-4270-a716-6a67b05c6d36.png)
+
+The graph indicates that the items by first time users on Instacart was White-Multifold Towels and second being sparkling water.
+
+## Predictive Modelling
+
+In terms of predictive modeling, I will utilise previously bought goods to forecast which products will be included in a user's future order. It necessitates the estimate of the likelihood of purchasing each good previously bought or to be purchased. This is both a classification and regression problem involving the probability of repurchases.
+
+### Feature engineering
+
+According to what we have learned from data exploration part, features can be broadly classified into 3 categories: user patterns, product patterns and user-product combined patterns. In user-patterns, these features are based on the patterns of the user only, such as the average cart size for users, the number of previous orders, the average day of week to shop, the average hour of day to buy, and the reorder percentage of all previous orders and product
+
+The second category is product features, these define the different product features based on the patterns of how these products get ordered. They can determine the product popularity by counting the number of times it has been ordered, how many got reordered and whether is a one of the top popular products etc.
+
+Lastly, the user-product combined features determine the combination features based on the patterns of how a particular user orders these products. For example, we can define the reordered percentage of a user for a specific product and the product’s average position in the cart by user. We can also define a dummy variable to see if this product was in the most recent orders.
+
+The Kaggle competition includes dataset in which there are 130,000 users with orders in the “order_products_train” which has the nth orders for each user that need to be predicted. This huge dataset requires high RAM infrastructure that is currently unavailable to us. Hence, reduction of the dataset is needed to include 10% of the users in the analysis. This means number of users used for predictive analysis is about 13,000 which comes to about a million observations. While the number of user ids has been reduced, all product-related attributes have been retained from the original dataset.
+
+### Model Analysis
+
+Finally, I got a huge utilized user-product level data with 130 million observations and 23 variables. I verified that the total number of attributes used in the forecast is 23. After that, I ran three models, decision tree, random forest, and logistic regression. Since I used user defined function to create different metrics for classification analysis, this dataset is an imbalanced dataset in which the target variable has more observations in one specific class than others, especially those with large number of repetitive items (bananas, dairy eggs, fruits, snacks, and drinks). Hence using only accuracy as a measurement is insufficient. So, we also introduced F score as it helps to be a better measurement to understand if there is an uneven class distribution. The final decision to pick model was decided based on F Score.
+
+![image](https://user-images.githubusercontent.com/80222038/154810747-51e37007-21ec-4d20-b353-02b2afe15feb.png)
+
+Based on the measure method in the picture above, the best model is Logistic Regression model since it had a highest F1 score. Logistic regression model is 90.63% accurate to predict if the product will be in the user’s next order. But there is only 16.8% precision if we count into the false positive values. The low precision is due to the imbalanced dataset, if we extend the analysis to the complete data with better processors, the precision rate will improve, and false positives will reduce.
+
+### Market Basket Analysis
+
+Market Basket Analysis (MBA) is the technique used by organizations to uncover association between different products. For example, a customer purchasing bread would have a 60% likelihood of also purchasing jam, or a customer purchasing laptop are more likely to purchase laptop bags as well. The organizations are trying to find associations between different products that can be sold together, further assisting in the right product placements. For instance, if consumers who purchase bread also purchase peanut butter, the marketing team could target these customers and offer them a discount on a third item, like eggs, so encouraging them to add eggs to their basket and thereby increasing revenue.
+
+### Apriori Algorithm
+
+![image](https://user-images.githubusercontent.com/80222038/154811764-6cb4bd66-eab1-45c7-9a13-aefd9081979c.png)
+
+Apriori Algorithm is used for finding association rules for MBA. Association Rules can be thought as If-Then relationships, let’s say, if an item A is being bought by the customer, then the chances (probability) of Item B being picked by the same customer is found out. The algorithm is using the co-occurrence patterns for generating these rules. For the above example, we have just seen one of the rules created by Apriori algorithm, but the dataset we used had 3 million orders from 200,000 customers, which led to the creation of 27 rules based on the parameters provided in the Apriori Algorithm based on 2 parameters, support and confidence
+
+We have all experienced shopping online, especially during the pandemic. All of us have visited retail online stores like Amazon, BestBuy, Walmart, and many more. If you're planning to purchase something online, you typically conduct a search for the item, choose it, put it to your basket, and proceed to checkout. However, when you conduct a search for a specific product, not only is that product pitched to you, but a plethora of additional products are given as a search result. The goal of the organization is to increase the revenue by showing you products that are frequently bought together.
+
 
 
 
