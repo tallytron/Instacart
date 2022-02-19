@@ -54,6 +54,28 @@ Another interesting point to note is that the graph shows that people seem to re
 
 The graph indicates that the items by first time users on Instacart was White-Multifold Towels and second being sparkling water.
 
+![image](https://user-images.githubusercontent.com/80222038/154811890-75a2260b-af23-4fda-9976-88714333ac7a.png)
+
+Top Products that people love to buy in the morning
+
+![image](https://user-images.githubusercontent.com/80222038/154811894-39f3c5cb-1ab7-458b-9ef9-5eddc281db80.png)
+
+Top 15 Aisles
+
+![image](https://user-images.githubusercontent.com/80222038/154811907-8bc8adbc-02de-41b4-9ccf-078ab2d100f1.png)
+
+Reordered items percentage 
+
+![image](https://user-images.githubusercontent.com/80222038/154811913-118ca188-fd17-41f2-972f-e0c9cf81b132.png)
+
+Organic VS Non-Organic
+
+
+![image](https://user-images.githubusercontent.com/80222038/154811966-3cef0ad0-c0b1-49bc-bf46-a62483fdde42.png)
+
+Treemap of top departments and aisles
+
+
 ## Predictive Modelling
 
 In terms of predictive modeling, I will utilise previously bought goods to forecast which products will be included in a user's future order. It necessitates the estimate of the likelihood of purchasing each good previously bought or to be purchased. This is both a classification and regression problem involving the probability of repurchases.
@@ -86,7 +108,14 @@ Market Basket Analysis (MBA) is the technique used by organizations to uncover a
 
 Apriori Algorithm is used for finding association rules for MBA. Association Rules can be thought as If-Then relationships, let’s say, if an item A is being bought by the customer, then the chances (probability) of Item B being picked by the same customer is found out. The algorithm is using the co-occurrence patterns for generating these rules. For the above example, we have just seen one of the rules created by Apriori algorithm, but the dataset we used had 3 million orders from 200,000 customers, which led to the creation of 27 rules based on the parameters provided in the Apriori Algorithm based on 2 parameters, support and confidence
 
-We have all experienced shopping online, especially during the pandemic. All of us have visited retail online stores like Amazon, BestBuy, Walmart, and many more. If you're planning to purchase something online, you typically conduct a search for the item, choose it, put it to your basket, and proceed to checkout. However, when you conduct a search for a specific product, not only is that product pitched to you, but a plethora of additional products are given as a search result. The goal of the organization is to increase the revenue by showing you products that are frequently bought together.
+We have all experienced shopping online, especially during the pandemic. All of us have visited retail online stores like Amazon, BestBuy, Walmart, and many more. If you're planning to purchase something online, you typically conduct a search for the item, choose it, put it to your basket, and proceed to checkout. However, when you conduct a search for a specific product, not only is that product pitched to you, but a plethora of additional products are given as a search result. The goal of the organization is to increase the revenue by showing you products that are frequently bought together. Support helps in finding the transactions where the items are bought together in a single transaction, whereas confidence shows the transactions where the likelihood of Y being purchased when X is purchased.
+
+## Recommendation
+
+Recommendation to Instacart is based on two components (Prediction Modelling and Apriori Algorithm). Based on purchasing patterns we have learned from customer behavior; we can improve the model accuracy for predicting user’s frequency. We can extend analysis to complete dataset on more powerful infrastructure and to include first time buying of new products. Also, we encourage to launch targeted marketing campaigns based on user’s activity and frequency of visit. For example, based on relation between customer purchase and the time, we could identify the best time to roll out the promotional offers and discounts to pull the new customers and embrace the existing ones. 
+
+Additionally, we can integrate the recommendation engine to the user's purchase behaviour in order to enhance the customer experience and promote customer retention. Given that the data we used for this research is from Instacart's 2017 dataset, Instacart's system already has an intelligent recommendation engine. However, based on the findings of this project, we can conclude that if a business has an effective search system, a consumer will receive similar things based on previous orders. Instacart can place a greater emphasis on consumer personalisation and simplicity; users should be recommended products they are most likely to purchase next time, as well as recommendations of associated and/or complementary products based on the items currently in the cart.
+
 
 
 
