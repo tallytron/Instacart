@@ -24,19 +24,19 @@ library(arulesViz)
 
 #IMPORTING ALL THE FILES
 # ORDERS CONTAINS THE LIST OF ALL THE ORDER IN THE DATRASET. IF DAYS_SINCE_PRIOR_ORDER = NA, THIS MEANS THAT IT WAS USER'S FIRST ORDER
-orders <- read.csv("C:\\Users\\Talal\\Desktop\\Queens_Coursework\\831\\instacart-market-basket-analysis\\orders.csv")
+orders <- read.csv("C:\\Users\\Desktop\\Queens_Coursework\\831\\instacart-market-basket-analysis\\orders.csv")
 
 # INFO ABOUT THE PRODUCT, FURTHERMORE AISLES AND DEPARTMENT
-products <- read.csv("C:\\Users\\Talal\\Desktop\\Queens_Coursework\\831\\instacart-market-basket-analysis\\products.csv")
+products <- read.csv("C:\\Users\\Desktop\\Queens_Coursework\\831\\instacart-market-basket-analysis\\products.csv")
 
 # INFO ABOUT WHICH PRODUCTS WERE ORDERED (PRODUCT_ID)
 # INFO ABOUT ORDER IN WHICH THE PRODUCT WAS ADDED TO CART
-order_products <- read.csv("C:\\Users\\Siddharth\\Desktop\\Queens_Coursework\\831\\instacart-market-basket-analysis\\order_products__train.csv")
+order_products <- read.csv("C:\\Users\\Desktop\\Queens_Coursework\\831\\instacart-market-basket-analysis\\order_products__train.csv")
 
 
-order_products_prior<- read.csv("C:\\Users\\Talal\\Desktop\\Queens_Coursework\\831\\instacart-market-basket-analysis\\order_products__prior.csv")
-aisles <- read.csv("C:\\Users\\Talal\\Desktop\\Queens_Coursework\\831\\instacart-market-basket-analysis\\aisles.csv")
-department <- read.csv("C:\\Users\\Talal\\Desktop\\Queens_Coursework\\831\\instacart-market-basket-analysis\\departments.csv")
+order_products_prior<- read.csv("C:\\Users\\Desktop\\Queens_Coursework\\831\\instacart-market-basket-analysis\\order_products__prior.csv")
+aisles <- read.csv("C:\\Users\\Desktop\\Queens_Coursework\\831\\instacart-market-basket-analysis\\aisles.csv")
+department <- read.csv("C:\\Users\\Desktop\\Queens_Coursework\\831\\instacart-market-basket-analysis\\departments.csv")
 
 str(orders)
 str(products)
@@ -265,18 +265,18 @@ top_aisles_graph
 ###################################Order hour exploration################
 #citation: https://www.kaggle.com/shwong/the-instacart-chart
 
-orders<-read_csv("/Users/yunhuixia/Desktop/831 Project/instacart-market-basket-analysis/orders.csv")
+orders<-read_csv("/Users/Desktop/831 Project/instacart-market-basket-analysis/orders.csv")
 #head(orders)
 orders<- orders[,c(1,3,6)]
 #head(orders)
-products<-read_csv("/Users/yunhuixia/Desktop/831 Project/instacart-market-basket-analysis/products.csv")
+products<-read_csv("/Users/Desktop/831 Project/instacart-market-basket-analysis/products.csv")
 #head(products)
 products<-products[,c(1,2)]
 #head(products)
-order.prior<-read.csv("/Users/yunhuixia/Desktop/831 Project/instacart-market-basket-analysis/order_products__prior.csv")
+order.prior<-read.csv("/Users/Desktop/831 Project/instacart-market-basket-analysis/order_products__prior.csv")
 #head(order.prior)
 order.prior<-order.prior[,c(1,2)]
-order.train<-read.csv("/Users/yunhuixia/Desktop/831 Project/instacart-market-basket-analysis/order_products__train.csv")
+order.train<-read.csv("/Users/Desktop/831 Project/instacart-market-basket-analysis/order_products__train.csv")
 order.train<-order.train[,c(1,2)]
 
 orders<-orders[which(orders$eval_set=="train" | orders$eval_set=="prior"), ]
@@ -343,19 +343,19 @@ ggplot()+
 
 ###################################Predictive Modeling##################
 # lists all aisles in the store
-aisles = read.csv('/Users/yunhuixia/Desktop/831 Project/instacart-market-basket-analysis/aisles.csv')
+aisles = read.csv('/Users/Desktop/831 Project/instacart-market-basket-analysis/aisles.csv')
 # Data dict: aisle name and aisle id
 
 # lists all aisles in the store
-departments = read.csv('/Users/yunhuixia/Desktop/831 Project/instacart-market-basket-analysis/departments.csv')
+departments = read.csv('/Users/Desktop/831 Project/instacart-market-basket-analysis/departments.csv')
 # Data dict:department name and department id
 
 # lists all aisles in the store
-products = read.csv('/Users/yunhuixia/Desktop/831 Project/instacart-market-basket-analysis/products.csv')
+products = read.csv('/Users/Desktop/831 Project/instacart-market-basket-analysis/products.csv')
 # Data dict:product name, product id, aisle id and department id to which the product belongs
 
 # lists all orders ( previous and current nth orders that need prediction)
-orders = read.csv('/Users/yunhuixia/Desktop/831 Project/instacart-market-basket-analysis/orders.csv')
+orders = read.csv('/Users/Desktop/831 Project/instacart-market-basket-analysis/orders.csv')
 # data dict: 
 #   order_id unique id for the order
 #   user_id: id of user who placed the order
@@ -364,7 +364,7 @@ orders = read.csv('/Users/yunhuixia/Desktop/831 Project/instacart-market-basket-
 #   order_hr:  hour of the day the order was placed
 
 #lists all previous orders
-order_products_prior = read.csv('/Users/yunhuixia/Desktop/831 Project/instacart-market-basket-analysis/order_products__prior.csv')
+order_products_prior = read.csv('/Users/Desktop/831 Project/instacart-market-basket-analysis/order_products__prior.csv')
 # data dict: 
 #   order_id unique id for the order
 #   product_id: id of the product the user ordered in that order
@@ -373,7 +373,7 @@ order_products_prior = read.csv('/Users/yunhuixia/Desktop/831 Project/instacart-
 #              0 indicates user ordered a new product that was never ordered by this user
 
 # lists all orders that need prediction
-order_products_train = read.csv('/Users/yunhuixia/Desktop/831 Project/instacart-market-basket-analysis/order_products__train.csv')
+order_products_train = read.csv('/Users/Desktop/831 Project/instacart-market-basket-analysis/order_products__train.csv')
 # data dict: 
 #   order_id unique id for the order
 #   product_id: id of the product the user ordered in that order
